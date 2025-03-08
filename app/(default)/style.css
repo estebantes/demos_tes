@@ -1,0 +1,27 @@
+/* app/(default)/style.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gray-900 text-gray-100 !important;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@layer utilities {
+  .leaflet-container {
+    @apply h-[400px] w-full z-0 bg-gray-800 !important;
+  }
+  
+  .leaflet-control-attribution {
+    @apply bg-white/80 text-xs p-1 !important;
+  }
+}
+
+:root {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
