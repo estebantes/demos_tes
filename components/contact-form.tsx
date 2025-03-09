@@ -9,7 +9,7 @@ import { Input } from "@/components/ui/input";
 import Button from "@/components/button";
 import logo from "@/public/favicon.ico.png";
 
-// Verificación de variables de entorno en tiempo de compilación
+// Validación de variable de entorno
 if (!process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY) {
   throw new Error("NEXT_PUBLIC_RECAPTCHA_SITE_KEY no está definido en .env.local");
 }
@@ -124,22 +124,28 @@ export default function ContactForm() {
         onError={() => console.error("Error cargando reCAPTCHA")}
       />
 
-      <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 p-4 border rounded-xl shadow-md max-w-md mx-auto">
+      <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 p-6 border border-gray-700 rounded-xl shadow-xl max-w-md mx-auto bg-gray-800">
         
-        <div className="flex justify-center mb-4">
-          <Image src={logo} alt="Logo TES" width={80} height={80} className="rounded-full" />
+        <div className="flex justify-center mb-8">
+          <Image 
+            src={logo} 
+            alt="Logo TES" 
+            width={100} 
+            height={100} 
+            className="rounded-full border-4 border-red-500"
+          />
         </div>
 
         {/* Campos del formulario */}
         {Object.entries(formSchema.shape).map(([fieldName]) => (
-          <div key={fieldName}>
+          <div key={fieldName} className="space-y-1">
             <Input
               {...register(fieldName as keyof FormData)}
-              className="bg-gray-800 text-white border-gray-700 w-full p-2 rounded-md"
+              className="bg-gray-900 text-white border-gray-700 w-full p-3 rounded-lg focus:ring-2 focus:ring-red-500"
               placeholder={fieldName.charAt(0).toUpperCase() + fieldName.slice(1)}
             />
             {errors[fieldName as keyof FormData] && (
-              <p className="text-red-500 text-sm mt-1">
+              <p className="text-red-400 text-sm mt-1">
                 {errors[fieldName as keyof FormData]?.message}
               </p>
             )}
@@ -151,13 +157,13 @@ export default function ContactForm() {
         <Button
           type="submit"
           disabled={isSubmitting}
-          className="bg-red-500 hover:bg-red-600 text-white w-full py-2 rounded-md transition-colors"
-          // icon="/ruta/correcta/icono.png" // Descomentar si tienes un icono
+          className="w-full bg-red-600 hover:bg-red-700 text-lg py-4 rounded-lg font-semibold"
+          icon="/llanta.svg"  // Asegúrate de tener este archivo en public/
         >
           {isSubmitting ? "Enviando..." : "Enviar mensaje"}
         </Button>
 
-        {serverError && <p className="text-red-500 text-center mt-4">{serverError}</p>}
+        {serverError && <p className="text-red-400 text-center mt-4">{serverError}</p>}
       </form>
     </>
   );

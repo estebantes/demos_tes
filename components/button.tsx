@@ -22,7 +22,9 @@ const Button: React.FC<ButtonProps> = ({
   className = '',
   children
 }) => {
-  const buttonClass = `inline-flex items-center justify-center px-3 py-2 text-sm font-medium text-center text-white bg-red-700 rounded-lg hover:bg-red-800 focus:outline-none focus:ring-0 transition-colors ${className}`;
+  const baseStyles = "inline-flex items-center justify-center gap-2 px-4 py-3 text-sm font-medium text-white bg-red-700 rounded-lg hover:bg-red-800 focus:outline-none focus:ring-0 transition-colors";
+  
+  const buttonClass = `${baseStyles} ${className}`;
 
   return href ? (
     <a href={href} className={buttonClass}>
@@ -31,9 +33,9 @@ const Button: React.FC<ButtonProps> = ({
         <Image
           src={icon}
           alt="icono"
-          width={30}
-          height={30}
-          className="ml-2 scale-90 transition-transform duration-300 ease-in-out hover:scale-100 rounded-full"
+          width={24}
+          height={24}
+          className="scale-90 transition-transform duration-300 ease-in-out hover:scale-100"
         />
       )}
     </a>
@@ -49,9 +51,9 @@ const Button: React.FC<ButtonProps> = ({
         <Image
           src={icon}
           alt="icono"
-          width={30}
-          height={30}
-          className="ml-2 scale-90 transition-transform duration-300 ease-in-out hover:scale-100 rounded-full"
+          width={24}
+          height={24}
+          className="scale-90 transition-transform duration-300 ease-in-out hover:scale-100"
         />
       )}
     </button>
