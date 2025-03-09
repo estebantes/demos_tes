@@ -1,7 +1,7 @@
 "use client"; // Asegúrate de que esta línea esté al inicio
 import Image from 'next/image';
 import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
+import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from "zod";
 import { useState, useRef, useEffect } from "react";
 import Script from "next/script";
@@ -9,7 +9,6 @@ import { Input } from "@/components/ui/input";
 import Button from "@/components/button"; // Importa el componente Button personalizado
 import iconButton from "@/public/llanta.svg";
 import logo from "@/public/favicon.ico.png";
-
 
 // Define el esquema de validación con Zod
 const formSchema = z.object({
@@ -73,13 +72,24 @@ export default function ContactForm() {
   // Cargar reCAPTCHA
   useEffect(() => {
     if (isScriptLoaded && captchaRef.current && process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY) {
-      window.grecaptcha?.ready(() => {
+      if (!window.grecaptcha) {
+        console.error("reCAPTCHA no está disponible");
+        return;
+      }
+
+      window.grecaptcha.ready(() => {
         if (captchaRef.current) {
-          const id = window.grecaptcha.render(captchaRef.current, {
-            sitekey: process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!,
-            callback: (token: string) => setCaptchaValue(token),
-          });
-          setWidgetId(id); // Guarda el ID del widget
+          try {
+            const id = window.grecaptcha.render(captchaRef.current, {
+              sitekey: process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!,
+              callback: (token: string) => setCaptchaValue(token),
+            });
+            if (typeof id === "number") {
+              setWidgetId(id); // Guarda el ID del widget
+            }
+          } catch (error) {
+            console.error("Error al renderizar reCAPTCHA:", error);
+          }
         }
       });
     }
