@@ -28,7 +28,7 @@
 /* Buttons */
 .btn,
 .btn-sm {
-    @apply font-medium inline-flex items-center justify-center border border-transparent rounded-sm leading-snug transition duration-150 ease-in-out ;
+    @apply font-medium inline-flex items-center justify-center border border-transparent rounded-sm leading-snug transition duration-150 ease-in-out;
 }
 
 .btn {
@@ -75,24 +75,5 @@
 
 .form-checkbox,
 .form-radio {
-    @apply text-red-600;
+    @apply text-purple-600;
 }
-
-/* Evitar FOUC en animaciones */
-[data-aos] {
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-  
-  [data-aos].aos-animate {
-    visibility: visible;
-    opacity: 1;
-  }
-  
-  /* Fix para position sticky en navegadores antiguos */
-  @supports (position: sticky) {
-    .sticky {
-      position: sticky;
-    }
-  }
