@@ -8,7 +8,7 @@ import Script from "next/script";
 import { Input } from "@/components/ui/input";
 import Button from "@/components/button"; // Importa el componente Button personalizado
 import iconButton from "@/public/llanta.svg";
-import logo from "public/favicon.ico.png";
+import logo from "@/public/favicon.ico.png";
 
 
 // Define el esquema de validación con Zod
