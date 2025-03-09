@@ -1,110 +1,89 @@
-"use client";
+'use client';
+import Image from 'next/image';
+import { useState } from 'react';
+import Modal from '@/components/utils/modal';
+import iconButton from '@/public/llanta.svg';
 
-import dynamic from "next/dynamic";
-import { Suspense } from "react";
+export default function Hero() {
+  const [videoModalOpen, setVideoModalOpen] = useState<boolean>(false);
 
-interface Terminal {
-  id: number;
-  name: string;
-  address: string;
-  hours: string;
-  phone: string;
-  lat: number;
-  lng: number;
-}
-
-const DynamicMapComponent = dynamic(() => import("@/components/MapComponent"), {
-  ssr: false,
-  loading: () => <div className="h-[400px] w-full bg-gray-800 animate-pulse rounded-lg" />
-});
-
-const terminals: Terminal[] = [
-  {
-    id: 1,
-    name: "Terminal Toluca",
-    address: "Carretera Federal México-Toluca 123, Toluca",
-    hours: "Lun-Dom: 6:00 - 22:00",
-    phone: "+527221234567",
-    lat: 19.2869,
-    lng: -99.6536
-  },
-  {
-    id: 2,
-    name: "Terminal Laredo",
-    address: "Av. Reforma 456, Nuevo Laredo",
-    hours: "Lun-Sáb: 7:00 - 20:00",
-    phone: "+528677123456",
-    lat: 27.89472680037219,
-    lng: -99.73635471804981
-  },
-  {
-    id: 3,
-    name: "Terminal Santiago Tianguistenco",
-    address: "Carretera Federal 95, Santiago Tianguistenco",
-    hours: "Lun-Vie: 8:00 - 18:00",
-    phone: "+527123456789",
-    lat: 19.173,
-    lng: -99.481
-  }
-];
-
-export default function TerminalesClient() {
   return (
-    <div className="max-w-6xl mx-auto px-4 sm:px-6">
-      <div className="pt-4 pb-10 md:pt-8 md:pb-16">
-        <h1 className="h1 mb-4 text-center">Terminales</h1>
-        <div>
-          <h2 className="h2 mb-2 text-left">
-            Estamos comprometidos con brindar un servicio de transporte de calidad
-          </h2>
-          <p className="text-lg text-gray-300 text-left">
-            Nuestra red de sucursales estratégicamente ubicadas nos permite estar más cerca de nuestros clientes en todo el país.
+    <section className="relative h-[100vh] overflow-hidden"> {/* ← Altura completa */}
+      {/* Imagen de fondo */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat zoom-animation"
+        style={{ backgroundImage: `url(/images/hero-image-01.jpg)` }}
+      ></div>
+
+      {/* Filtro de opacidad */}
+      <div className="absolute inset-0 bg-black opacity-50"></div>
+
+      {/* Contenido del Hero */}
+      <div className="relative h-full flex items-center justify-center px-4 pt-20"> {/* ← pt-20 compensa el header */}
+        <div className="max-w-3xl mx-auto text-center">
+          <h1 className="h1 mb-4 text-white" data-aos="fade-up">
+            Innovación que nos mueve.
+          </h1>
+          <p
+            className="text-xl text-gray-300 mb-8"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            Juntos, Hacemos que Cada Entrega Cuente.
           </p>
+          <div className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center sm:gap-4">
+            <a
+              className="btn text-white bg-red-600 hover:bg-red-700 w-full sm:w-auto mb-4 sm:mb-0 rounded-lg flex items-center"
+              href="/contacto"
+              data-aos="fade-up"
+              data-aos-delay="400"
+            >
+              Nuestro Contacto
+              <Image
+                src={iconButton}
+                alt="icono llanta"
+                width={30}
+                height={30}
+                className="ml-2"
+              />
+            </a>
+            <a
+              className="btn text-white bg-gray-700 hover:bg-gray-800 w-full sm:w-auto rounded-lg flex items-center"
+              href="/servicios"
+              data-aos="fade-up"
+              data-aos-delay="600"
+            >
+              Nuestros Servicios
+              <Image
+                src={iconButton}
+                alt="icono llanta"
+                width={30}
+                height={30}
+                className="ml-2"
+              />
+            </a>
+          </div>
         </div>
       </div>
 
-      <div className="mt-8 flex justify-center">
-        <a
-          href="https://maps.app.goo.gl/LsP8UnWtkypiLFYY6"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="btn bg-red-500 text-white hover:bg-red-600 px-6 py-3 rounded-lg"
-        >
-          Ver en Google Maps
-        </a>
-      </div>
-
-      <div className="my-6">
-        <Suspense fallback={<div className="h-[400px] w-full bg-gray-800 animate-pulse rounded-lg" />}>
-          <DynamicMapComponent terminals={terminals} />
-        </Suspense>
-      </div>
-
-      <ul className="space-y-4">
-        {terminals.map((terminal) => (
-          <li key={terminal.id} className="bg-gray-800 p-4 rounded-lg shadow-md">
-            <h3 className="text-lg font-bold text-white">{terminal.name}</h3>
-            <p className="text-gray-300">{terminal.address}</p>
-            <p className="text-gray-400">Horario: {terminal.hours}</p>
-            <div className="mt-2 flex gap-2">
-              <a
-                href={`tel:${terminal.phone}`}
-                className="btn bg-red-500 text-white hover:bg-red-600 px-4 py-2 rounded-md"
-              >
-                Llamar
-              </a>
-              <a
-                href={`https://www.google.com/maps?q=${terminal.lat},${terminal.lng}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn bg-gray-700 text-white hover:bg-gray-800 px-4 py-2 rounded-md"
-              >
-                Cómo llegar
-              </a>
-            </div>
-          </li>
-        ))}
-      </ul>
-    </div>
+      {/* Animación de zoom */}
+      <style jsx>{`
+        @keyframes slowZoom {
+          0% {
+            transform: scale(1);
+          }
+          50% {
+            transform: scale(1.1);
+          }
+          100% {
+            transform: scale(1);
+          }
+        }
+        .zoom-animation {
+          animation: slowZoom 20s infinite;
+          transform-origin: center;
+        }
+      `}</style>
+    </section>
   );
 }

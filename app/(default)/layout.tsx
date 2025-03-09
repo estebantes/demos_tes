@@ -1,7 +1,6 @@
 // app/(default)/layout.tsx
 import { Inter } from 'next/font/google'
 import './style.css'
-import DOMCleaner from '@/components/DOMCleaner'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -27,7 +26,6 @@ export default function RootLayout({
         }} />
       </head>
       <body className={`${inter.variable} bg-gray-900 text-gray-100`} suppressHydrationWarning>
-        <DOMCleaner />
         <script dangerouslySetInnerHTML={{
           __html: `document.body.classList.add('ready')`
         }} />
