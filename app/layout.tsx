@@ -31,13 +31,20 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} ${architects_daughter.variable} font-inter antialiased bg-gray-900 text-gray-200 tracking-tight`}>
-        <div className="flex flex-col min-h-screen overflow-hidden ">
+        <div className="flex flex-col min-h-screen overflow-hidden">
+          {/* Header */}
           <Header />
-          {children}
+
+          {/* Contenido principal con márgenes superior e inferior */}
+          <main className="flex-grow pt-20 pb-20">
+            {children}
+          </main>
+
+          {/* Banner */}
           <Banner />
         </div>
       </body>
     </html>
-  )
+  );
 }
- 
+
