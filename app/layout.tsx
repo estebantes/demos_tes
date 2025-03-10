@@ -3,7 +3,6 @@ import './css/style.css'
 import { Inter, Architects_Daughter } from 'next/font/google'
 
 import Header from '@/components/ui/header'
-import Footer from '@/components/ui/footer'
 import Banner from '@/components/banner'
 
 const inter = Inter({
@@ -33,19 +32,12 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.variable} ${architects_daughter.variable} font-inter antialiased bg-gray-900 text-gray-200 tracking-tight`}>
         <div className="flex flex-col min-h-screen overflow-hidden">
-          {/* Header */}
           <Header />
-
-          {/* Contenido principal con márgenes superior e inferior */}
-          <main className="flex-grow pt-20 pb-20">
-            {children}
-          </main>
-          <Footer />
-          {/* Banner */}
+          {children}
           <Banner />
         </div>
       </body>
     </html>
-  );
+  )
 }
-
+ 

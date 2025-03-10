@@ -1,36 +1,39 @@
-// app/(default)/layout.tsx
-import { Inter } from 'next/font/google'
-import './style.css'
+'use client'
 
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
-  display: 'swap'
-})
+import { useEffect } from 'react'
 
-export default function RootLayout({
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+
+import PageIllustration from '@/components/page-illustration'
+import Footer from '@/components/ui/footer'
+
+export default function DefaultLayout({
   children,
 }: {
   children: React.ReactNode
-}) {
+}) {  
+
+  useEffect(() => {
+    AOS.init({
+      once: true,
+      disable: 'phone',
+      duration: 600,
+      easing: 'ease-out-sine',
+    })
+  })
+
   return (
-    <html lang="es" suppressHydrationWarning>
-      <head>
-        {/* Prevenir FOUC */}
-        <style dangerouslySetInnerHTML={{
-          __html: `
-            :root { --font-inter: ${inter.style.fontFamily} }
-            body { opacity: 0; transition: opacity 0.3s; }
-            body.ready { opacity: 1; }
-          `
-        }} />
-      </head>
-      <body className={`${inter.variable} bg-gray-900 text-gray-100`} suppressHydrationWarning>
-        <script dangerouslySetInnerHTML={{
-          __html: `document.body.classList.add('ready')`
-        }} />
+    <>
+      <main className="grow">
+
+        <PageIllustration />
+
         {children}
-      </body>
-    </html>
+
+      </main>
+
+      <Footer />
+    </>
   )
 }
