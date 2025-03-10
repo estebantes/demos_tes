@@ -1,5 +1,7 @@
+'use client';
+
 import Image from 'next/image';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 interface ButtonProps {
   href?: string;
@@ -10,6 +12,7 @@ interface ButtonProps {
   disabled?: boolean;
   className?: string;
   children?: React.ReactNode;
+  isSubmitting?: boolean;
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -20,14 +23,37 @@ const Button: React.FC<ButtonProps> = ({
   onClick,
   disabled,
   className = '',
-  children
+  children,
+  isSubmitting = false
 }) => {
-  const baseStyles = "inline-flex items-center justify-center gap-2 px-4 py-3 text-sm font-medium text-white bg-red-700 rounded-lg hover:bg-red-800 focus:outline-none focus:ring-0 transition-colors";
+  const baseStyles = "group inline-flex items-center justify-center gap-3 px-6 py-3 text-base font-medium text-white bg-red-600 rounded-lg hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 transition-all duration-300";
   
   const buttonClass = `${baseStyles} ${className}`;
+  
+  const [isHovered, setIsHovered] = useState(false);
+  const [isRolling, setIsRolling] = useState(false);
+
+  useEffect(() => {
+    let rollTimer: NodeJS.Timeout;
+    
+    if (isHovered) {
+      rollTimer = setTimeout(() => {
+        setIsRolling(true);
+      }, 300); // Espera el tiempo de la transición de desplazamiento
+    } else {
+      setIsRolling(false);
+    }
+
+    return () => clearTimeout(rollTimer);
+  }, [isHovered]);
 
   return href ? (
-    <a href={href} className={buttonClass}>
+    <a
+      href={href}
+      className={buttonClass}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
       {text || children}
       {icon && (
         <Image
@@ -35,7 +61,13 @@ const Button: React.FC<ButtonProps> = ({
           alt="icono"
           width={24}
           height={24}
-          className="scale-90 transition-transform duration-300 ease-in-out hover:scale-100"
+          className={`transform transition-all duration-300 ease-in-out ${
+            isSubmitting 
+              ? 'animate-spin' 
+              : `${isHovered ? 'translate-x-3' : 'translate-x-0'} ${
+                  isRolling ? 'animate-roll' : ''
+                }`
+          }`}
         />
       )}
     </a>
@@ -45,6 +77,8 @@ const Button: React.FC<ButtonProps> = ({
       onClick={onClick}
       disabled={disabled}
       className={buttonClass}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
     >
       {text || children}
       {icon && (
@@ -53,7 +87,13 @@ const Button: React.FC<ButtonProps> = ({
           alt="icono"
           width={24}
           height={24}
-          className="scale-90 transition-transform duration-300 ease-in-out hover:scale-100"
+          className={`transform transition-all duration-300 ease-in-out ${
+            isSubmitting 
+              ? 'animate-spin' 
+              : `${isHovered ? 'translate-x-3' : 'translate-x-0'} ${
+                  isRolling ? 'animate-roll' : ''
+                }`
+          }`}
         />
       )}
     </button>

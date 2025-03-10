@@ -3,6 +3,7 @@ import './css/style.css'
 import { Inter, Architects_Daughter } from 'next/font/google'
 
 import Header from '@/components/ui/header'
+import Footer from '@/components/ui/footer'
 import Banner from '@/components/banner'
 
 const inter = Inter({
@@ -39,7 +40,7 @@ export default function RootLayout({
           <main className="flex-grow pt-20 pb-20">
             {children}
           </main>
-
+          <Footer />
           {/* Banner */}
           <Banner />
         </div>

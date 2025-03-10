@@ -16,6 +16,19 @@
     }
 }
 
+
+@keyframes roll {
+    from {
+      transform: translateX(12px) rotate(0deg);
+    }
+    to {
+      transform: translateX(12px) rotate(360deg);
+    }
+  }
+  
+  .animate-roll {
+    animation: roll 1s linear infinite;
+  }
 /* See Alpine.js: https://github.com/alpinejs/alpine#x-cloak */
 [x-cloak=""] {
     display: none;
