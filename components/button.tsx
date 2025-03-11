@@ -1,41 +1,39 @@
 'use client';
 
-import Image from 'next/image';
-import React, { useState, useEffect } from 'react';
+// Importaciones necesarias
+import React, { useState, useEffect } from 'react'; // <-- Importa React, useState y useEffect
+import Image from 'next/image'; // <-- Importa Image de next/image
+import Link from 'next/link'; // <-- Importa Link de next/link
 
+// Definición de la interfaz ButtonProps
 interface ButtonProps {
   href?: string;
-  text?: string;
-  icon?: string;
   type?: 'button' | 'submit' | 'reset';
-  onClick?: () => void;
   disabled?: boolean;
   className?: string;
   children?: React.ReactNode;
+  text?: string;
   isSubmitting?: boolean;
+  icon?: string;
 }
 
 const Button: React.FC<ButtonProps> = ({
   href,
-  text,
-  icon,
   type = 'button',
-  onClick,
-  disabled,
+  disabled = false,
   className = '',
   children,
-  isSubmitting = false
+  text,
+  isSubmitting = false,
+  icon
 }) => {
-  const baseStyles = "group inline-flex items-center justify-center gap-3 px-6 py-3 text-base font-medium text-white bg-red-600 rounded-lg hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 transition-all duration-300";
-  
-  const buttonClass = `${baseStyles} ${className}`;
-  
   const [isHovered, setIsHovered] = useState(false);
   const [isRolling, setIsRolling] = useState(false);
 
+  // Efecto de roll cuando se hace hover
   useEffect(() => {
     let rollTimer: NodeJS.Timeout;
-    
+
     if (isHovered) {
       rollTimer = setTimeout(() => {
         setIsRolling(true);
@@ -47,55 +45,70 @@ const Button: React.FC<ButtonProps> = ({
     return () => clearTimeout(rollTimer);
   }, [isHovered]);
 
-  return href ? (
-    <a
-      href={href}
-      className={buttonClass}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
-      {text || children}
-      {icon && (
-        <Image
-          src={icon}
-          alt="icono"
-          width={24}
-          height={24}
-          className={`transform transition-all duration-300 ease-in-out ${
-            isSubmitting 
-              ? 'animate-spin' 
-              : `${isHovered ? 'translate-x-3' : 'translate-x-0'} ${
-                  isRolling ? 'animate-roll' : ''
-                }`
-          }`}
-        />
+  // Estilos base del botón
+  const baseStyles = `inline-flex items-center justify-center gap-2 px-6 py-3 text-lg font-semibold text-white rounded-lg transition-all duration-300 ${
+    disabled ? 'bg-gray-600 opacity-75 cursor-not-allowed' : 'bg-red-600 hover:bg-red-700'
+  } ${className}`;
+
+  // Contenido del botón
+  const buttonContent = (
+    <>
+      {isSubmitting ? (
+        <>
+          <span className="animate-pulse">{text || children}</span>
+          {icon && (
+            <Image
+              src={icon}
+              alt="Loading"
+              width={24}
+              height={24}
+              className="animate-spin ml-2"
+            />
+          )}
+        </>
+      ) : (
+        <>
+          {text || children}
+          {icon && !disabled && (
+            <Image
+              src={icon}
+              alt="Icon"
+              width={24}
+              height={24}
+              className={`transition-transform duration-300 ${
+                isHovered ? 'translate-x-2' : 'translate-x-0'
+              } ${isRolling ? 'animate-roll' : ''}`}
+            />
+          )}
+        </>
       )}
-    </a>
-  ) : (
+    </>
+  );
+
+  // Si tiene href, es un enlace
+  if (href) {
+    return (
+      <Link
+        href={href}
+        className={baseStyles}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+        {buttonContent}
+      </Link>
+    );
+  }
+
+  // Si no tiene href, es un botón normal
+  return (
     <button
       type={type}
-      onClick={onClick}
       disabled={disabled}
-      className={buttonClass}
+      className={baseStyles}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      {text || children}
-      {icon && (
-        <Image
-          src={icon}
-          alt="icono"
-          width={24}
-          height={24}
-          className={`transform transition-all duration-300 ease-in-out ${
-            isSubmitting 
-              ? 'animate-spin' 
-              : `${isHovered ? 'translate-x-3' : 'translate-x-0'} ${
-                  isRolling ? 'animate-roll' : ''
-                }`
-          }`}
-        />
-      )}
+      {buttonContent}
     </button>
   );
 };
