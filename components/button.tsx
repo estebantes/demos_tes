@@ -93,6 +93,8 @@ const Button: React.FC<ButtonProps> = ({
         className={baseStyles}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
+        data-aos="fade-up"
+        data-aos-delay="600"
       >
         {buttonContent}
       </Link>
@@ -107,6 +109,8 @@ const Button: React.FC<ButtonProps> = ({
       className={baseStyles}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      data-aos="fade-up"
+      data-aos-delay="600"
     >
       {buttonContent}
     </button>

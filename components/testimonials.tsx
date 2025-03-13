@@ -23,12 +23,12 @@ export default function Testimonials() {
   };
 
   return (
-    <section>
+    <section className= 'backgroundtestimonials'>
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="py-12 md:py-20 border-t border-gray-800">
 
           {/* Section header */}
-          <div className="max-w-3xl mx-auto text-center pb-12 md:pb-20">
+          <div className="max-w-3xl mx-auto text-center  md:pb-20">
             <h2 className="h2 mb-4">Compromiso Certificado con la Excelencia</h2>
             <p className="text-xl text-gray-400">Con estándares de calidad reconocidos, garantizamos que cada proceso se ejecute con la máxima eficiencia y precisión para superar tus expectativas.</p>
           </div>
@@ -112,19 +112,7 @@ export default function Testimonials() {
             ))}
           </div>
         </div>
-        <div className="flex gap-4 justify-center">
-        <Button
-          href="/contacto"
-          text="Contacto"
-          icon={iconButton}
-        />
-        <Button
-          href="/servicios"
-          text="Servicios"
-          icon={iconButton}
-          className="text-white !bg-gray-700 hover:!bg-gray-800 text-lg"
-        />
-      </div>
+       
       </div>
     </section>
   );

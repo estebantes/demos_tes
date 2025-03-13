@@ -6,6 +6,7 @@ import 'aos/dist/aos.css'
 
 import PageIllustration from '@/components/page-illustration'
 import Footer from '@/components/ui/footer'
+import TextoCompartido from '@/components/texto-compartido'
 
 export default function DefaultLayout({
   children,
@@ -28,6 +29,7 @@ export default function DefaultLayout({
         <PageIllustration />
         {children}
       </main>
+      <TextoCompartido/>
       <Footer />
     </>
   )

@@ -17,7 +17,7 @@ export default function Politica() {
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6" data-aos-id-blocks>
       {/* Sección principal */}
-      <div className="pt-4 pb-10 md:pt-8 md:pb-16" data-aos="fade-up" data-aos-delay="400">
+      <div className="pt-4  md:pt-8" data-aos="fade-up" data-aos-delay="400">
         <h1 className="h1 mb-4 text-center ">Nuestra Política Integral</h1>
 
         {/* Sección "Guiando Nuestro Camino" */}
@@ -66,20 +66,6 @@ export default function Politica() {
 
 
           </div>
-        </div>
-
-
-        <div className="mt-8 flex gap-4"> {/* Contenedor flexible con espacio de 1rem (16px) entre los botones */}
-          <Button
-            href="/contacto"
-            text="Contacto"
-            icon={iconButton}
-          />
-          <Button
-            href="/servicios"
-            text="Servicios"
-            icon={iconButton}
-            className="  text-white !bg-gray-700 hover:!bg-gray-800 text-lg"           />
         </div>
       </div>
 

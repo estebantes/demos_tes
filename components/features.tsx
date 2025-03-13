@@ -12,7 +12,8 @@ import Button from '@/components/button'; // Importa el componente Button person
 
 export default function Features() {
   return (
-    <section>
+    <section className= 'backgroundfeatures'> 
+      
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
      
 

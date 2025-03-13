@@ -54,21 +54,15 @@ export default function Valores() {
           </div>
         </div>
 
-        <div className="mt-8">
-          <Button
-            href="#"
-            text="Read more"
-            icon={iconButton} // Pasa el ícono
-          />
-        </div>
+       
       </div>
 
       <h2 className="h2 mb-8 text-left">Nuestros Valores</h2>
 
       {/* Items container */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" data-aos-id-blocks>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center" data-aos-id-blocks>
         {/* Card 1 */}
-        <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 group hover:shadow-lg transition-all duration-1000 ease-in-out relative overflow-hidden" data-aos="fade-up" data-aos-anchor="[data-aos-id-blocks]">
+        <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 group hover:shadow-lg transition-all duration-1000 ease-in-out relative overflow-hidden w-full" data-aos="fade-up" data-aos-anchor="[data-aos-id-blocks]">
           {/* Efecto de conexión de bordes */}
           <div className="absolute inset-x-0 h-0.5 bg-red-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-1000 ease-in-out"></div>
           <div className="absolute inset-x-0 bottom-0 h-0.5 bg-red-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-1000 ease-in-out"></div>
@@ -87,7 +81,7 @@ export default function Valores() {
         </div>
 
         {/* Card 2 */}
-        <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 group hover:shadow-lg transition-all duration-1000 ease-in-out relative overflow-hidden" data-aos="fade-up" data-aos-anchor="[data-aos-id-blocks]">
+        <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 group hover:shadow-lg transition-all duration-1000 ease-in-out relative overflow-hidden w-full" data-aos="fade-up" data-aos-anchor="[data-aos-id-blocks]">
           {/* Efecto de conexión de bordes */}
           <div className="absolute inset-x-0 h-0.5 bg-red-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-1000 ease-in-out"></div>
           <div className="absolute inset-x-0 bottom-0 h-0.5 bg-red-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-1000 ease-in-out"></div>
@@ -106,7 +100,7 @@ export default function Valores() {
         </div>
 
         {/* Card 3 */}
-        <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 group hover:shadow-lg transition-all duration-1000 ease-in-out relative overflow-hidden" data-aos="fade-up" data-aos-anchor="[data-aos-id-blocks]">
+        <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 group hover:shadow-lg transition-all duration-1000 ease-in-out relative overflow-hidden w-full" data-aos="fade-up" data-aos-anchor="[data-aos-id-blocks]">
           {/* Efecto de conexión de bordes */}
           <div className="absolute inset-x-0 h-0.5 bg-red-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-1000 ease-in-out"></div>
           <div className="absolute inset-x-0 bottom-0 h-0.5 bg-red-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-1000 ease-in-out"></div>
@@ -125,7 +119,7 @@ export default function Valores() {
         </div>
 
         {/* Card 4 */}
-        <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 group hover:shadow-lg transition-all duration-1000 ease-in-out relative overflow-hidden" data-aos="fade-up" data-aos-anchor="[data-aos-id-blocks]">
+        <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 group hover:shadow-lg transition-all duration-1000 ease-in-out relative overflow-hidden w-full" data-aos="fade-up" data-aos-anchor="[data-aos-id-blocks]">
           {/* Efecto de conexión de bordes */}
           <div className="absolute inset-x-0 h-0.5 bg-red-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-1000 ease-in-out"></div>
           <div className="absolute inset-x-0 bottom-0 h-0.5 bg-red-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-1000 ease-in-out"></div>
@@ -144,7 +138,7 @@ export default function Valores() {
         </div>
 
         {/* Card 5 */}
-        <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 group hover:shadow-lg transition-all duration-1000 ease-in-out relative overflow-hidden" data-aos="fade-up" data-aos-anchor="[data-aos-id-blocks]">
+        <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 group hover:shadow-lg transition-all duration-1000 ease-in-out relative overflow-hidden w-full" data-aos="fade-up" data-aos-anchor="[data-aos-id-blocks]">
           {/* Efecto de conexión de bordes */}
           <div className="absolute inset-x-0 h-0.5 bg-red-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-1000 ease-in-out"></div>
           <div className="absolute inset-x-0 bottom-0 h-0.5 bg-red-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-1000 ease-in-out"></div>
@@ -163,7 +157,7 @@ export default function Valores() {
         </div>
 
         {/* Card 6 */}
-        <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 group hover:shadow-lg transition-all duration-1000 ease-in-out relative overflow-hidden" data-aos="fade-up" data-aos-anchor="[data-aos-id-blocks]">
+        <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 group hover:shadow-lg transition-all duration-1000 ease-in-out relative overflow-hidden w-full" data-aos="fade-up" data-aos-anchor="[data-aos-id-blocks]">
           {/* Efecto de conexión de bordes */}
           <div className="absolute inset-x-0 h-0.5 bg-red-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-1000 ease-in-out"></div>
           <div className="absolute inset-x-0 bottom-0 h-0.5 bg-red-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-1000 ease-in-out"></div>
@@ -182,7 +176,7 @@ export default function Valores() {
         </div>
 
         {/* Card 7 */}
-        <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 group hover:shadow-lg transition-all duration-1000 ease-in-out relative overflow-hidden" data-aos="fade-up" data-aos-anchor="[data-aos-id-blocks]">
+        <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 group hover:shadow-lg transition-all duration-1000 ease-in-out relative overflow-hidden w-full" data-aos="fade-up" data-aos-anchor="[data-aos-id-blocks]">
           {/* Efecto de conexión de bordes */}
           <div className="absolute inset-x-0 h-0.5 bg-red-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-1000 ease-in-out"></div>
           <div className="absolute inset-x-0 bottom-0 h-0.5 bg-red-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-1000 ease-in-out"></div>
@@ -201,7 +195,7 @@ export default function Valores() {
         </div>
 
         {/* Card 8 */}
-        <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 group hover:shadow-lg transition-all duration-1000 ease-in-out relative overflow-hidden" data-aos="fade-up" data-aos-anchor="[data-aos-id-blocks]">
+        <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 group hover:shadow-lg transition-all duration-1000 ease-in-out relative overflow-hidden w-full" data-aos="fade-up" data-aos-anchor="[data-aos-id-blocks]">
           {/* Efecto de conexión de bordes */}
           <div className="absolute inset-x-0 h-0.5 bg-red-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-1000 ease-in-out"></div>
           <div className="absolute inset-x-0 bottom-0 h-0.5 bg-red-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-1000 ease-in-out"></div>
@@ -220,7 +214,7 @@ export default function Valores() {
         </div>
 
         {/* Card 9 */}
-        <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 group hover:shadow-lg transition-all duration-1000 ease-in-out relative overflow-hidden" data-aos="fade-up" data-aos-anchor="[data-aos-id-blocks]">
+        <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 group hover:shadow-lg transition-all duration-1000 ease-in-out relative overflow-hidden w-full" data-aos="fade-up" data-aos-anchor="[data-aos-id-blocks]">
           {/* Efecto de conexión de bordes */}
           <div className="absolute inset-x-0 h-0.5 bg-red-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-1000 ease-in-out"></div>
           <div className="absolute inset-x-0 bottom-0 h-0.5 bg-red-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-1000 ease-in-out"></div>
@@ -239,7 +233,7 @@ export default function Valores() {
         </div>
 
         {/* Card 10 */}
-        <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 group hover:shadow-lg transition-all duration-1000 ease-in-out relative overflow-hidden" data-aos="fade-up" data-aos-anchor="[data-aos-id-blocks]">
+        <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 group hover:shadow-lg transition-all duration-1000 ease-in-out relative overflow-hidden w-full" data-aos="fade-up" data-aos-anchor="[data-aos-id-blocks]">
           {/* Efecto de conexión de bordes */}
           <div className="absolute inset-x-0 h-0.5 bg-red-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-1000 ease-in-out"></div>
           <div className="absolute inset-x-0 bottom-0 h-0.5 bg-red-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-1000 ease-in-out"></div>
@@ -260,18 +254,7 @@ export default function Valores() {
 
 
 
-      <div className="mt-8 flex gap-4"> {/* Contenedor flexible con espacio de 1rem (16px) entre los botones */}
-        <Button
-          href="/contacto"
-          text="Contacto"
-          icon={iconButton}
-        />
-        <Button
-          href="/servicios"
-          text="Servicios"
-          icon={iconButton}
-          className="  text-white !bg-gray-700 hover:!bg-gray-800 text-lg" />
-      </div>
+    
     </div>
 
   );

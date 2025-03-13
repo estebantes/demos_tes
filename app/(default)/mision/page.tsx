@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import iconButton from '@/public/llanta.svg';
 import Button from '@/components/button';
+import TextoCompartido from '@/components/texto-compartido';
  // Importa el ícono
 
 export const metadata = {
@@ -10,6 +11,7 @@ export const metadata = {
 
 export default function Mision() {
   return (
+    <section className="backgroundmision">
     <div className="max-w-6xl mx-auto px-4 sm:px-6 overflow: auto;
 " data-aos-id-blocks>
       {/* Sección principal */}
@@ -27,16 +29,7 @@ export default function Mision() {
 
         {/* Sección "Misión" con fondo de imagen y opacidad */}
         <div className="mb-6 mt-20 relative">
-          {/* Fondo de imagen con opacidad */}
-          <div className="absolute inset-0 z-0 ">
-            <Image
-              src="/images/mision_img1.jpeg" // Ruta de la imagen
-              alt="Fondo de misión"
-              width={1200} // Ajusta el tamaño según sea necesario
-              height={800}
-              className="w-full h-full object-cover rounded-lg opacity-30  "
-            />
-          </div>
+          
 
           {/* Contenido */}
           <div className="relative z-10  p-16">
@@ -55,19 +48,10 @@ export default function Mision() {
 
           </div>
         </div>
-        <div className="mt-8 flex gap-4"> {/* Contenedor flexible con espacio de 1rem (16px) entre los botones */}
-          <Button
-            href="/contacto"
-            text="Contacto"
-            icon={iconButton}
-          />
-          <Button
-            href="/servicios"
-            text="Servicios"
-            icon={iconButton}
-            className="  text-white !bg-gray-700 hover:!bg-gray-800 text-lg"           />
-        </div>
+       
       </div>
+      
     </div>
+    </section>
   );
 }

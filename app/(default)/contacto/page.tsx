@@ -25,13 +25,13 @@ export default function Contacto() {
       <div className="mb-12">
         <ContactForm />
       </div>
-
+    
       <div className="mt-8 flex gap-4 justify-center">
         <Button
           href="/servicios"
           text="Nuestros Servicios"
           icon={iconButton}
-          className="text-white bg-gray-700 hover:bg-gray-800 text-lg px-8 py-3"
+          className="text-white !bg-gray-700 hover:bg-gray-800 text-lg px-8 py-3"
         />
       </div>
     </div>

@@ -287,20 +287,6 @@ export default function Servicios() {
         </div>
       </div>
 
-      {/* Botones de acción */}
-      <div className="mt-8 flex gap-4 justify-center">
-        <Button
-          href="/contacto"
-          text="Contacto"
-          icon={iconButton}
-        />
-        <Button
-          href="/servicios"
-          text="Servicios"
-          icon={iconButton}
-          className="text-white !bg-gray-700 hover:!bg-gray-800 text-lg"
-        />
-      </div>
     </div>
   );
 }
