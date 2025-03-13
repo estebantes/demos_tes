@@ -9,13 +9,18 @@ export const metadata = {
 
 export default function Valores() {
   return (
+
+    <section className='backgroundvalores'>
+
     <div className="max-w-6xl mx-auto px-4 sm:px-6" data-aos-id-blocks>
       {/* Sección principal */}
       <div className="pt-4 pb-10 md:pt-8 md:pb-16" data-aos="fade-up" data-aos-delay="400">
         <h1 className="h1 mb-4 text-center ">Nuestros Valores</h1>
 
         {/* Sección "Guiando Nuestro Camino" */}
-        <div data-aos="fade-up" data-aos-delay="200">
+
+        
+        <div data-aos="fade-up "  data-aos-delay="200">
           <div className="py-12 md:py-10 border-t border-red-800"></div>
           <h2 className="h2 mb-2 text-left">Nuestro Compromiso Fundamental</h2> {/* Texto centrado */}
           <p className="text-lg text-gray-300 text-left"> {/* Texto centrado */}
@@ -25,16 +30,7 @@ export default function Valores() {
 
         {/* Sección "Misión" con fondo de imagen y opacidad */}
         <div className="mb-6 mt-20 relative">
-          {/* Fondo de imagen con opacidad */}
-          <div className="absolute inset-0 z-0 ">
-            <Image
-              src="/images/valores_img1.jpeg" // Ruta de la imagen
-              alt="Fondo de misión"
-              width={1200} // Ajusta el tamaño según sea necesario
-              height={800}
-              className="w-full h-full object-cover rounded-lg opacity-30  "
-            />
-          </div>
+
 
           {/* Contenido */}
           <div className="relative z-10  p-16">
@@ -55,7 +51,9 @@ export default function Valores() {
         </div>
 
        
+
       </div>
+
 
       <h2 className="h2 mb-8 text-left">Nuestros Valores</h2>
 
@@ -251,11 +249,8 @@ export default function Valores() {
           </div>
         </div>
       </div>
-
-
-
-    
-    </div>
+    </div >
+    </section>
 
   );
 }

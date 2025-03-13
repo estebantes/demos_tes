@@ -127,8 +127,15 @@
     background-repeat: no-repeat;
     
   }
-  .backgroundmvision {
-    background-image: url('/back_vision.svg');
+  .backgroundvision {
+    background-image: url('/back_vision.png');
+        background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+  }
+  .backgroundvalores {
+    background-image: url('/back_valores.png');
         background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
