@@ -9,7 +9,9 @@ export const metadata = {
 
 export default function Contacto() {
   return (
-    <div className="max-w-6xl mx-auto px-4 sm:px-6">
+
+    <section className='backgroundcontacto'>
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 " data-aos-id-blocks>
       <div className="pt-4 pb-10 md:pt-8 md:pb-16">
         <h1 className="h1 mb-4 text-center">Contacto</h1>
 
@@ -31,9 +33,9 @@ export default function Contacto() {
           href="/servicios"
           text="Nuestros Servicios"
           icon={iconButton}
-          className="text-white !bg-gray-700 hover:bg-gray-800 text-lg px-8 py-3"
         />
       </div>
     </div>
+    </section>
   );
 }

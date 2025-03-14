@@ -12,12 +12,12 @@ import servicio_despedida from '@/public/servicio_despedida.jpg';
 
 export const metadata = {
   title: 'Servicios - TES',
-  description: 'Nuestra misión y valores fundamentales.',
+  description: 'Nuestros Servicios',
 };
 
 export default function Servicios() {
   return (
-    <div className="max-w-6xl mx-auto px-4 sm:px-6" data-aos-id-blocks>
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 backgroundservicios" data-aos-id-blocks>
       
       {/* Sección principal */}
       <div className="pt-4 pb-10 md:pt-8 md:pb-16" data-aos="fade-up" data-aos-delay="400">

@@ -10,7 +10,7 @@ export const metadata = {
 export default function Valores() {
   return (
 
-    <section className='backgroundvalores'>
+    <section className='backgroundcontacto'>
 
     <div className="max-w-6xl mx-auto px-4 sm:px-6" data-aos-id-blocks>
       {/* Sección principal */}

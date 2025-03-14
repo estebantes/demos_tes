@@ -10,7 +10,7 @@ import TextoCompartido from '@/components/texto-compartido'
 
 export const metadata = {
   title: 'Inicio - TES',
-  description: 'Nuestra misión y valores fundamentales.',
+  description: 'Juntos, Hacemos que Cada Entrega Cuente.',
 };
 
 export default function Home() {

@@ -15,7 +15,7 @@ export const metadata = {
 
 export default function Politica() {
   return (
-    <div className="max-w-6xl mx-auto px-4 sm:px-6" data-aos-id-blocks>
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 backgroundpolitica" data-aos-id-blocks>
       {/* Sección principal */}
       <div className="pt-4  md:pt-8" data-aos="fade-up" data-aos-delay="400">
         <h1 className="h1 mb-4 text-center ">Nuestra Política Integral</h1>
@@ -30,17 +30,8 @@ export default function Politica() {
         </div>
 
         {/* Sección "Misión" con fondo de imagen y opacidad */}
-        <div className="mb-6 mt-20 relative">
-          {/* Fondo de imagen con opacidad */}
-          <div className="absolute inset-0 z-0 ">
-            <Image
-              src="/images/politica_img1.jpeg" // Ruta de la imagen
-              alt="Fondo de misión"
-              width={1200} // Ajusta el tamaño según sea necesario
-              height={800}
-              className="w-full h-full object-cover rounded-lg opacity-30  "
-            />
-          </div>
+        <div className="mb-6 mt-20 relative ">
+
 
           {/* Contenido */}
           <div className="relative z-10  p-16">

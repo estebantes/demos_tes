@@ -142,4 +142,32 @@
     
   }
   
- 
+  .backgroundpolitica {
+    background-image: url('/back_politica.png');
+        background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+  }
+  
+  .backgroundservicios {
+    background-image: url('/back_servicios.png');
+        background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+  }
+  .backgroundterminales {
+    background-image: url('/back_terminales.png');
+        background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+  }
+  .backgroundcontacto {
+    background-image: url('/back_contacto.png');
+        background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+  }

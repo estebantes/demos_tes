@@ -5,13 +5,13 @@ import iconButton from '@/public/llanta.svg';
 import TextoCompartido from '@/components/texto-compartido';
 
 export const metadata = {
-  title: 'Servicios - TES',
-  description: 'Nuestra misión y valores fundamentales.',
+  title: 'Terminales - TES',
+  description: 'Nuestras Sucursales',
 };
 
 export default function Terminales() {
   return (
-    <div className="max-w-6xl mx-auto px-4 sm:px-6" data-aos-id-blocks>
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 backgroundterminales" data-aos-id-blocks>
       
       {/* Sección principal */}
       <div className="pt-4 md:pt-8" data-aos="fade-up" data-aos-delay="400">
