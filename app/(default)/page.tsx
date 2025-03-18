@@ -4,7 +4,6 @@ import Newsletter from '@/components/newsletter'
 import Zigzag from '@/components/zigzag'
 import Testimonials from '@/components/testimonials'
 import Blocks from '@/components/blocks'
-import TextoCompartido from '@/components/texto-compartido'
 
 
 

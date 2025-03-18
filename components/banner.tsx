@@ -1,37 +1,90 @@
-'use client'
+// components/CookieBanner.tsx
+"use client"; // Asegúrate de que este componente se ejecute en el cliente
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react';
 
-export default function Banner() {
-  const [bannerOpen, setBannerOpen] = useState<boolean>(true)
+const CookieBanner = () => {
+  const [showBanner, setShowBanner] = useState(false);
+  const [cookiesAccepted, setCookiesAccepted] = useState<boolean | null>(null);
 
-  return (
-    <>
-      {bannerOpen && (
-        <div className="fixed bottom-0 right-0 w-full md:bottom-8 md:right-12 md:w-auto z-60">
-          <div className="bg-slate-800 text-slate-50 text-sm p-3 md:rounded shadow-lg flex justify-between">
-            <div className="text-slate-500 inline-flex">
-              <a
-                className="font-medium hover:underline text-slate-50"
-                href="https://github.com/cruip/open-react-template"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Aceptación de Cookies
-              </a>{' '}
-              <span className="italic px-1.5">or</span>{' '}
-              <a className="font-medium hover:underline text-emerald-400" href="" target="_blank" rel="noreferrer">
-                Más info              </a>
-            </div>
-            <button className="text-slate-500 hover:text-slate-400 pl-2 ml-3 border-l border-gray-700" onClick={() => setBannerOpen(false)}>
-              <span className="sr-only">Close</span>
-              <svg className="w-4 h-4 shrink-0 fill-current" viewBox="0 0 16 16">
-                <path d="M12.72 3.293a1 1 0 00-1.415 0L8.012 6.586 4.72 3.293a1 1 0 00-1.414 1.414L6.598 8l-3.293 3.293a1 1 0 101.414 1.414l3.293-3.293 3.293 3.293a1 1 0 001.414-1.414L9.426 8l3.293-3.293a1 1 0 000-1.414z" />
-              </svg>
-            </button>
-          </div>
+  useEffect(() => {
+    // Verificar si el usuario ya ha aceptado o rechazado las cookies
+    const hasAcceptedCookies = localStorage.getItem('cookiesAccepted');
+    if (hasAcceptedCookies === null) {
+      setShowBanner(true); // Mostrar el banner si no hay decisión previa
+    } else {
+      setCookiesAccepted(hasAcceptedCookies === 'true');
+    }
+  }, []);
+
+  const handleAcceptCookies = () => {
+    localStorage.setItem('cookiesAccepted', 'true');
+    setCookiesAccepted(true);
+    setShowBanner(false);
+  };
+
+  const handleRejectCookies = () => {
+    localStorage.setItem('cookiesAccepted', 'false');
+    setCookiesAccepted(false);
+    setShowBanner(false);
+  };
+
+  // Si el usuario no ha aceptado las cookies, bloquea el contenido
+  if (cookiesAccepted === false) {
+    return (
+      <div className="fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center p-4 z-50">
+        <div className="bg-white p-6 rounded-lg shadow-lg text-center max-w-md">
+          <h2 className="text-xl font-bold mb-4">Cookies Requeridas</h2>
+          <p className="mb-4">
+            Para continuar navegando en este sitio, es necesario aceptar el uso de cookies.
+          </p>
+          <button
+            onClick={handleAcceptCookies}
+            className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600"
+          >
+            Aceptar Cookies
+          </button>
         </div>
-      )}
-    </>
-  )
-}
+      </div>
+    );
+  }
+
+  // Mostrar el banner de cookies si no se ha tomado una decisión
+  if (showBanner) {
+    return (
+      <div className="fixed bottom-0 left-0 right-0 bg-gray-800 text-white p-4 flex justify-between items-center z-50">
+        <p className="text-sm">
+          Este sitio web utiliza cookies para mejorar la experiencia del usuario.{" "}
+          <a
+            href="/politica-de-cookies"
+            className="underline hover:text-gray-300"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Más información
+          </a>
+          . ¿Aceptas el uso de cookies?
+        </p>
+        <div className="flex space-x-4">
+          <button
+            onClick={handleAcceptCookies}
+            className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600"
+          >
+            Aceptar
+          </button>
+          <button
+            onClick={handleRejectCookies}
+            className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600"
+          >
+            Rechazar
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  // Si el usuario ha aceptado las cookies, no mostrar nada
+  return null;
+};
+
+export default CookieBanner;
