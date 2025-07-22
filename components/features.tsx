@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import autoMotor from '@/public/AUTOMOTOR.svg';
-import levadura from '@/public/levadura.svg';
+
 import metalurgia from '@/public/METALURGIA.svg';
 import pet from '@/public/PET.svg';
 import peligrosos from '@/public/peligrosos.svg';
@@ -43,13 +43,13 @@ export default function Features() {
 
             {/* 2nd item */}
             <div className="relative flex flex-col items-center" data-aos="fade-up" data-aos-delay="100" data-aos-anchor="[data-aos-id-blocks]">
-            <Image
-                        src={levadura}
-                        alt="icono levadura"
-                        width={70}
-                        height={70}
-                        className="bg-red-600 ml-2 scale-90 transition-transform duration-300 ease-in-out hover:scale-100 rounded-full"
-                      />
+           <Image
+  src="/levadura.svg"
+  alt="icono levadura"
+  width={70}
+  height={70}
+/>
+
               <h4 className="h4 mb-2">Levadura Líquida</h4>
               <p className="text-lg text-gray-400 text-center">Comprendemos la importancia de cada ingrediente en el proceso de elaboración de productos fermentados como  levadura líquida.</p>
             </div>
