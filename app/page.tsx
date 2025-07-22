@@ -1,4 +1,24 @@
-// /app/page.tsx
+import Hero from '@/components/hero'
+import Features from '@/components/features'
+import Zigzag from '@/components/zigzag'
+import Testimonials from '@/components/testimonials'
+import Blocks from '@/components/blocks'
+
+
+
+export const metadata = {
+  title: 'Inicio - TES',
+  description: 'Juntos, Hacemos que Cada Entrega Cuente.',
+};
+
 export default function Home() {
-  return <h1>Página principal</h1>;
+  return (
+    <>
+      <Hero />
+      <Blocks />
+      <Features />
+      <Zigzag />
+      <Testimonials />
+    </>
+  )
 }
