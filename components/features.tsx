@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import autoMotor from '@/public/AUTOMOTOR.svg';
-import levadura from '@/public/levadura.svg';
+import levadura from '@/public/LEVADURA.svg';
 import metalurgia from '@/public/METALURGIA.svg';
 import pet from '@/public/PET.svg';
 import peligrosos from '@/public/peligrosos.svg';
