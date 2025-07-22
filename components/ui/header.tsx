@@ -150,22 +150,8 @@ export default function Header() {
                 </Link>
               </li>
 
-              <li>
-                <Link
-                  href="/signin"
-                  className="font-medium text-white hover:text-red-500 px-4 py-3 flex items-center transition duration-150 ease-in-out"
-                >
-                  Sign in
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/signup"
-                  className="btn-sm text-white bg-red-500 hover:bg-red-600 ml-3 px-4 py-2 rounded-full transition duration-150"
-                >
-                  Sign up
-                </Link>
-              </li>
+             
+              
             </ul>
           </nav>
 
